@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <fieldset>
+              <div class="form-group">
+                <input id = "emailInput" type="text" formControlName="email" class="form-control" placeholder="Email" required />
+                <span class="text-danger"
+                  *ngIf="(formControls.email)?.touched &&(formControls.email)?.hasError('required')">
+                  Email is required
+                </span>
+                <span  id = "emailValidateError" class="text-danger" *ngIf="formControls.email?.errors?.pattern">
+                  Email must be a valid email address
+                </span>
+              </div>
+
+              <div class="form-group">
+                <input  id = "passwordInput" class="border border-warning" type="password" formControlName="password" class="form-control"
+                  placeholder="Password" required />
+                <span class="text-danger"
+                  *ngIf="(formControls.password)?.touched &&(formControls.password)?.hasError('required')">
+                  Password is required
+                </span>
+                <span  id = "passwordValidateError" class="text-danger" *ngIf="formControls.password?.errors?.minlength">Password must be at least 6
+                  characters</span>
+              </div>
+
+              <button id = "logn" class="btn btn-secondary  loginButton" type="submit" [disabled]="!loginForm.valid">
+                Login
+              </button>
+
+
+            </fieldset>
+          </form>
+        </div>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
