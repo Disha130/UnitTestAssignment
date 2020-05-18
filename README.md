@@ -1,5 +1,24 @@
 # UnitTestAssignment
 
+Note -- This application login with only these credentials (id - admin@gmail.com & pass - admin@123)
+- This Assignment is used to show Login page and Dashboard page please find the below features of this application.
+
+- Login Component:
+
+- Two fields user id and password are present on it.
+- Login button.
+- Initially Login button disable.
+- when enter user id and password then login button enable.
+- Regex applied on user id field which says it must same as email field it should consider @ and .'' in it and if regex does not      match  should give error.
+- User id Required error also placed over here.
+- Password is required error also placed over here.
+- validation error message displays if we enter max length in password field.
+- If user id and password field is not valid it displays error.
+- On click login button user should redirect to Dashboard page.
+- Dashboard page contains simple ui on page.
+- Log out button placed on dashboard page.
+- On click Log out button user should redirect to Login page again.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
 
 ## Development server
